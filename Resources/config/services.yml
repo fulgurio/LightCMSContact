@@ -1,0 +1,14 @@
+services:
+    # Contact Mailer
+    fulgurio_lightcmscontact.contact_mailer:
+        class: Fulgurio\LightCMSContactBundle\Mailer\ContactMailer
+        arguments:
+            0: "@mailer"
+            1: "@router"
+            2: "@templating"
+            3:
+                contact.from               : %fulgurio_light_cms_contact.email.contact.from%
+                contact.to                 : %fulgurio_light_cms_contact.email.contact.to%
+                contact.subject            : %fulgurio_light_cms_contact.email.contact.subject%
+                contact.textTemplate       : %fulgurio_light_cms_contact.email.contact.text%
+                contact.htmlTemplate       : %fulgurio_light_cms_contact.email.contact.html%

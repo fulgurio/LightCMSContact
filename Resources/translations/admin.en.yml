@@ -1,0 +1,10 @@
+fulgurio:
+    lightcms:
+        pages:
+            add_form:
+                model:
+                    contact:                      Contact
+    lightCMSContact:
+        contact:
+            add_form:
+                emails_label: Target email (separated by comma)

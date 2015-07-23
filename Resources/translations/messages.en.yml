@@ -1,0 +1,10 @@
+fulgurio:
+    lightCMSContact:
+        contact:
+            lastname:
+                not_blank: Lastname is required
+            email:
+                not_blank: Email is required
+            message:
+                not_blank: Message is required
+            success: Your message has been sent successfully !

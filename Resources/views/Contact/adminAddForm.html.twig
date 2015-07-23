@@ -1,0 +1,29 @@
+{% extends 'FulgurioLightCMSBundle:models:_adminAddForm.html.twig' %}
+
+
+{% block leftFields %}
+				<div class="control-group">
+					<label class="control-label" for="{{ form.content.vars.id }}">{% trans from "admin" %}fulgurio.lightcms.pages.add_form.content_label{% endtrans %}</label>
+					<div class="controls">
+						<textarea class="input-xlarge wysiwyg" id="{{ form.content.vars.id }}" cols="30" rows="8" name="{{ form.content.vars.full_name }}">{{ form.content.vars.value }}</textarea>
+					</div>
+				</div>
+{% endblock %}
+
+{% block javascriptBottom %}
+{% if wysiwyg is defined %}
+{%   include wysiwyg.admin_footer with { 'config': wysiwyg.config, 'idElt': 'textarea.wysiwyg' } %}
+{% endif %}
+{% endblock %}
+
+{% block rightFields %}
+{{ parent() }}
+			<div class="well span4 pull-right">
+				<div class="control-group">
+					<label class="control-label" for="{{ form.emails.vars.id }}">{% trans from "admin" %}fulgurio.lightCMSContact.contact.add_form.emails_label{% endtrans %}</label>
+					<div class="controls">
+						<input type="text" id="{{ form.emails.vars.id }}" class="input-xlarge" name="{{ form.emails.vars.full_name }}" value="{% if form.emails.vars.value %}{{ form.emails.vars.value }}{% else %}{% if pageMetas['emails'] is defined %}{{ pageMetas['emails'].metaValue }}{% endif %}{% endif %}" />
+					</div>
+				</div>
+			</div>
+{% endblock %}
